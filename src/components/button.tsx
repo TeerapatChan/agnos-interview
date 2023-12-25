@@ -9,7 +9,7 @@ type props = {
 export default function Button(props: props) {
   return (
     <button
-      className={`py-2 px-4 rounded-xl w-[70%] md:w-3/5 lg:w-1/2 
+      className={`py-2 px-4 rounded-xl w-[85%] xs:w-[80%] sm:w-[70%] lg:w-1/2 h-10 md:h-12
       transition duration-400 ease-in-out  font-medium md:text-lg 
       sm:text-sm xs:text-xs text-xs ${
         props.fingerClicked || props.absClikcked
