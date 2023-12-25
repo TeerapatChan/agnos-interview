@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import FingerMain from "./components/finger/finger-main";
+import Button from "./components/button";
+import AbsMain from "./components/abs-section/abs-main";
 
 function App() {
+  const [fingerClicked, setFingerClicked] = useState("");
+  const [absClicked, setAbsClicked] = useState("");
+  const [show, setShow] = useState("abs");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-primary flex flex-col justify-center items-center h-screen Light">
+      {show === "abs" ? (
+        <AbsMain setAbsClicked={setAbsClicked} absClicked={absClicked} />
+      ) : (
+        <FingerMain
+          setFingerClicked={setFingerClicked}
+          fingerClicked={fingerClicked}
+        />
+      )}
+      <Button
+        setFingerClicked={setFingerClicked}
+        setAbsClicked={setAbsClicked}
+        fingerClicked={fingerClicked}
+        absClikcked={absClicked}
+        setShow={setShow}
+      />
     </div>
   );
 }
