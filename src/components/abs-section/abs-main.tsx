@@ -25,11 +25,6 @@ export default function AbsMain(props: props) {
           setAbsClicked={props.setAbsClicked}
           absClicked={props.absClicked}
         />
-        <img
-          src={absImages.allOverHighlight}
-          alt="Button highlight"
-          className="h-full z-10 absolute hidden"
-        />
       </div>
     </div>
   );
